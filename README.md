@@ -1,3 +1,13 @@
+# Dotloop fork of Amazon Kinesis Agent
+We forked this because it would only build under JDK 1.7 or 1.8. There have only been a few small changes to `pom.xml`. To build the .jar, do the following (don't use the original setup script or Ant):
+
+```
+$ mvn dependency:copy-dependencies package
+```
+
+This will copy all the dependency jars to `target/dependency` and will create the Kinesis agent jar in `target`.
+
+
 # Amazon Kinesis Agent
 
 The **Amazon Kinesis Agent** is a stand-alone Java software application that offers an easier way to collect and ingest data into [Amazon Kinesis][kinesis] services, including [Amazon Kinesis Streams][kinesis-stream] and [Amazon Kinesis Firehose][kinesis-firehose].
